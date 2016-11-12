@@ -38,9 +38,9 @@ And 3 children tags [ (tag)[https://wiki.openstreetmap.org/wiki/Tags] - member(p
  * I wrote a python script to print out all the values for each key in distinct file. the script named "explore_key_and_values.py" in the repo.  
  * After look in each file of them I noticed some unexpected data in some files :
  	* addr:country :  
-  	* expected : all the values should have the value "Egypt" or something similar.
-  	* BUT if found all the values between "EG" (the know symbol for egypt) and "ET" this also refers to egypt but it's not known.
-  	* solution : change all "ET" values to "EG". 
+  		* expected : all the values should have the value "Egypt" or something similar.
+  		* BUT if found all the values between "EG" (the know symbol for egypt) and "ET" this also refers to egypt but it's not known.
+  		* solution : change all "ET" values to "EG". 
 	* addr:city :
 		* expected : all values should be in [ Cairo, Banha, Giza]
 		* BUT many values either streets in the city or the city name in different typing and even in different language (local language).
