@@ -2,14 +2,18 @@
 # Case study of Cairo/Egypt [OpenStreetMap](https://www.openstreetmap.org) xml file.  
 
 Cairo is the capital of Egypt (my country).  
+  
 The uncompressed map xml-osm file is about 120 mb downloaed from [mapzen openstreetmap extractions](https://mapzen.com/data/metro-extracts/metro/cairo_egypt/)  
+  
 Most of the entries are from Cairo, but still there is a few from the two cities [ Banha,Giza) which are close to cairo.  
+  
 Knowing the data from OpenStreetMap  means that no one review the submit which causes lots of messy things.  
 We will get to some of these messy data any try to clean them as much as we can.  
-
+  
 The xml data consists of 3 major tags ( [node](https://wiki.openstreetmap.org/wiki/Node), [way](https://wiki.openstreetmap.org/wiki/Way), [relation](https://wiki.openstreetmap.org/wiki/Relation) ),click on them for more information and check the [OpenStreetMap Wiki](https://wiki.openstreetmap.org/wiki/Main_Page),  
 And 3 children tags [ (tag)[https://wiki.openstreetmap.org/wiki/Tags] - member(parent=relation) - nd(parent=way) ].  
 ## exploration :  
+  
 * what I'm concerned about in the cleaning proces is child tag "tag" which is in the form [key:value].  
 * there are 239 different keys in the data .  
 * 17 of them starts with "addr:..." and they are listed below :
@@ -62,8 +66,22 @@ And 3 children tags [ (tag)[https://wiki.openstreetmap.org/wiki/Tags] - member(p
 
 
 ----
-
+  
 ## Cleaning : 
+ cleaning process is done by the python script : cleaning_map.py.
+ It checks for all faulty data I mentioned earlier and then decide wether to reject, correct or keep the data as it is and then write the data into a new file  cleaned_data.osm .
+ 
+----
+
+## To CSV :
+	next step is to convert the data from xml to csv format, using the schema "schema.py" and the python script "xml_to_csv.py" .  
+	the result will be csv files one for each tag name, the columns are the attributes and the data are the values.
+
+----
+  
+## To SQL :
+	to convert the csv files into a SQLite database using the schema "schema.sql" and python script "csv_to_sql"
 	
-    
+-----
+
  
