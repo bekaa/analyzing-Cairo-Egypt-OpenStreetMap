@@ -71,16 +71,18 @@ And 3 children tags [ (tag)[https://wiki.openstreetmap.org/wiki/Tags] - member(p
  cleaning process is done by the python script : cleaning_map.py.
  It checks for all faulty data I mentioned earlier and then decide wether to reject, correct or keep the data as it is and then write the data into a new file  cleaned_data.osm .
  
-----
+---
+
 
 ## To CSV :
-	next step is to convert the data from xml to csv format, using the schema "schema.py" and the python script "xml_to_csv.py" .  
-	the result will be csv files one for each tag name, the columns are the attributes and the data are the values.
+
+* next step is to convert the data from xml to csv format, using the schema "schema.py" and the python script "xml_to_csv.py" .    
+* the result will be csv files one for each tag name, the columns are the attributes and the data are the values.
 
 ----
   
 ## To SQL :
-	to convert the csv files into a SQLite database using the schema "schema.sql" and python script "csv_to_sql"
+* to convert the csv files into a SQLite database using the schema "schema.sql" and python script "csv_to_sql"
 	
 -----
 
