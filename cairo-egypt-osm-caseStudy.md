@@ -11,8 +11,11 @@ Knowing the data from OpenStreetMap  means that no one review the submit which c
 We will get to some of these messy data any try to clean them as much as we can.  
   
 The xml data consists of 3 major tags ( [node](https://wiki.openstreetmap.org/wiki/Node), [way](https://wiki.openstreetmap.org/wiki/Way), [relation](https://wiki.openstreetmap.org/wiki/Relation) ),click on them for more information and check the [OpenStreetMap Wiki](https://wiki.openstreetmap.org/wiki/Main_Page),  
-And 3 children tags [ (tag)[https://wiki.openstreetmap.org/wiki/Tags] - member(parent=relation) - nd(parent=way) ].  
-## exploration :  
+And 3 children tags [ [tag](https://wiki.openstreetmap.org/wiki/Tags) - member(parent=relation) - nd(parent=way) ]. 
+
+----
+
+## exploring problems in data :  
   
 * what I'm concerned about in the cleaning proces is child tag "tag" which is in the form [key:value].  
 * there are 239 different keys in the data .  
