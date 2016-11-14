@@ -88,12 +88,74 @@ And 3 children tags [ [tag](https://wiki.openstreetmap.org/wiki/Tags) - member(p
 * to convert the csv files into a SQLite database using the schema "schema.sql" and python script "csv_to_sql"
 	
 -----
-#### edits over time :
+## contributions over time :
+---
 edits to the map are made from 2008 to 2016 .  
 here are 3 graphs for [ nodes, ways, relations ] creation.  
 and we can see that the highest number of nodes and ways created on 07-2016 and the highest number of relations are created in 04-2013.  
 -----
-![Relations](https://docs.google.com/spreadsheets/d/1jjvbSRT1NAvvqnkjTAPzKIAgiJsss4I3wqOAegCLYXM/pubchart?oid=379890330&format=image)
-![ways](https://docs.google.com/spreadsheets/d/1jjvbSRT1NAvvqnkjTAPzKIAgiJsss4I3wqOAegCLYXM/pubchart?oid=275453333&format=image)
 ![nodes](https://docs.google.com/spreadsheets/d/1jjvbSRT1NAvvqnkjTAPzKIAgiJsss4I3wqOAegCLYXM/pubchart?oid=1869514109&format=image) 
+![ways](https://docs.google.com/spreadsheets/d/1jjvbSRT1NAvvqnkjTAPzKIAgiJsss4I3wqOAegCLYXM/pubchart?oid=275453333&format=image)
+![Relations](https://docs.google.com/spreadsheets/d/1jjvbSRT1NAvvqnkjTAPzKIAgiJsss4I3wqOAegCLYXM/pubchart?oid=379890330&format=image)
+
 ----
+## Top 10 user : 
+----
+```sql
+select e.user ,count(*) as num
+from ( 
+	select user from ways union all 
+		select x.user from( 
+			select user from relations union all 
+				select user from nodes ) x 
+	)  e
+group by e.user
+order by num desc
+limit 10
+```
+----
+
+| user | #of contributes
+---- | ----
+Salmanjk|	112319
+Mohawow|	62067
+warneke7|	60456
+Triscia|	47106
+Allegro34|	37416
+DesertMoh|	29434
+Rondon237|	28225
+Heinz_V|	27355
+tellmy@gmx_net|	26213
+bauma|		24360
+
+-----
+they contributed in 68.97 % of overall contributions.  
+the top user "Salmanjk" contributed in 17.03 %  .  
+
+----
+## TOP 10 tag keys :
+----
+```python
+select type, key , count(*) as num
+from nodes_tags
+group by type,key
+order by num desc
+limit 10
+```
+---------
+type | key | #of occurances
+----|-----|------
+regular|	power|	5048
+regular|	name|	3116
+regular|	start_date|	2933
+name|	en|	2135
+name|	ar|	1805
+regular|	amenity|	1609
+regular|	alt_name|	880
+regular|	place|	7460
+regular|	is_in|	686
+regular|	int_name|	651
+------
+
+
+
