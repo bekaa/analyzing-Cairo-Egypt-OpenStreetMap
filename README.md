@@ -13,6 +13,7 @@ the code folder contains the python scripts used in the report, they are used as
   * cleaning_map.py : it cleans the add as explained in the report and produce new map.
   * xml_to_csv and schema.py : a code rewrite the xml file into a csv files, one file for each parent tag with some verfications using that schema.
   * csv_to_sql and schema.sql : create a database tables using the schema, then add the data from the csv files into these tables.
+  
 ---------
 #### in most of these scripts you will need to change the filename and the path to the input and output.
 ----------------
