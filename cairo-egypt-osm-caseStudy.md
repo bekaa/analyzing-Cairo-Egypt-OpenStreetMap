@@ -89,4 +89,4 @@ And 3 children tags [ [tag](https://wiki.openstreetmap.org/wiki/Tags) - member(p
 	
 -----
 
- 
+ <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1jjvbSRT1NAvvqnkjTAPzKIAgiJsss4I3wqOAegCLYXM/pubchart?oid=379890330&amp;format=interactive"></iframe>
