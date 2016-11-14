@@ -5,7 +5,7 @@ Cairo is the capital of Egypt (my country).
   
 The uncompressed map xml-osm file is about 120 mb downloaed from [mapzen openstreetmap extractions](https://mapzen.com/data/metro-extracts/metro/cairo_egypt/)  
   
-Most of the entries are from Cairo, but still there is a few from the two cities [ Banha,Giza) which are close to cairo.  
+Most of the entries are from Cairo, but still there is a few from the two cities ( Banha,Giza) which are close to cairo.  
   
 Knowing the data from OpenStreetMap  means that no one review the submit which causes lots of messy things.  
 We will get to some of these messy data any try to clean them as much as we can.  
@@ -88,8 +88,17 @@ And 3 children tags [ [tag](https://wiki.openstreetmap.org/wiki/Tags) - member(p
 * to convert the csv files into a SQLite database using the schema "schema.sql" and python script "csv_to_sql"
 	
 -----
+## number of nodes, ways and relations :
+```python
+select count(nodes.id), count(ways.id), count(relations.id)
+from nodes, ways, relations
+```
+|nodes|ways|relations|
+----|-----|-------
+|547370|112108|151
+--------
 ## contributions over time :
----
+
 edits to the map are made from 2008 to 2016 .  
 here are 3 graphs for [ nodes, ways, relations ] creation.  
 and we can see that the highest number of nodes and ways created on 07-2016 and the highest number of relations are created in 04-2013.  
@@ -100,7 +109,7 @@ and we can see that the highest number of nodes and ways created on 07-2016 and 
 
 ----
 ## Top 10 user : 
-----
+
 ```sql
 select e.user ,count(*) as num
 from ( 
@@ -133,8 +142,8 @@ they contributed in 68.97 % of overall contributions.
 the top user "Salmanjk" contributed in 17.03 %  .  
 
 ----
-## TOP 10 tag keys :
-----
+## top 10  used tag keys :
+
 ```python
 select type, key , count(*) as num
 from nodes_tags
@@ -143,7 +152,7 @@ order by num desc
 limit 10
 ```
 ---------
-type | key | #of occurances
+type | key | #of occurrences
 ----|-----|------
 regular|	power|	5048
 regular|	name|	3116
@@ -156,6 +165,108 @@ regular|	place|	7460
 regular|	is_in|	686
 regular|	int_name|	651
 ------
+## top 10 used tag keys + values together :
 
+type | key | value | #of occurrences
+---|---|-----|-----
+regular |	power|	tower|	4939
+regular |	start_date	|2015|	2933
+regular |	is_in	|Egypt, جمهورية مصر العربية	|571
+regular |	place	|village|	491
+regular |	amenity	|place_of_worship|	229
+regular |	amenity	|restaurant|	218
+regular |	barrier	|gate|	210
+regular |	amenity	|cafe|	163
+regular |	religion|	muslim|	148
+regular |	natural|	tree|	140
+------
+## Most popular cuisines :
 
+```python
+SELECT nodes_tags.value, COUNT(*) as num
+FROM nodes_tags 
+    JOIN (SELECT DISTINCT(id) FROM nodes_tags WHERE value='restaurant') i
+    ON nodes_tags.id=i.id
+WHERE nodes_tags.key='cuisine'
+GROUP BY nodes_tags.value
+having num > 1
+ORDER BY num DESC;
+```
+type | #of occurrences
+----|------
+regional	|18
+italian	|9
+american	|7
+chicken	|7
+pizza	|7
+burger	|6
+chinese	|4
+ice_cream	|4
+kebab	|4
+Egyptian	|3
+asian	|3
+lebanese	|3
+egyptian	|2
+sandwich	|2
+sushi	|2
+---------------------
+## Top 10 appearing amenities :
 
+```python
+SELECT value, COUNT(*) as num
+FROM nodes_tags
+WHERE key='amenity'
+GROUP BY value
+ORDER BY num DESC
+LIMIT 10;
+```
+amenity | #of occurrences
+----|-----
+place_of_worship	|229
+restaurant	|218
+cafe	|163
+fuel	|126
+fast_food	|105
+bank	|100
+pharmacy	|89
+hospital	|65
+school	|64
+embassy	|51
+--------------
+## Pizza resturants :heart_eyes: :
+
+```python
+SELECT nodes_tags.value
+FROM nodes_tags 
+    JOIN (SELECT DISTINCT(id) FROM nodes_tags WHERE value='pizza') i
+    ON nodes_tags.id=i.id
+WHERE nodes_tags.key='name'
+GROUP BY nodes_tags.value
+```
+|name|
+------
+|Pizza Hut|
+|Pizza King|
+|Vinny's Pizzeria|
+|بابا جونس|
+|بيزا هت|
+|دومينوز يتزا|
+|هاردييز|
+----------------------------
+# Addional ideas :
+most of the messy data (in my opinion) are caused by misanderstanding of the field, typo, writing in different language, or writing in different syntax ( like street names with different typing but still the same street)  
+  
+I think the site could make some regex verfications for fields like postcode, housenumber and other fields that could be represented by a regular experession. 
+  
+And for the fields like city,country,streetnames I think that the site should get a list of them from other governmental source, and let the user choose his city,country,streetname from a drop-down list, this way there will be no miss-typing or any other strange data.
+  
+Also some fields should be united to some one language , just like some fields are meant only for english , and others from a local language, this way we won't have some fields with mixing languages which leads to  some problems.
+
+---------------------------------------------
+# Finally :
+this project proves that it's very hard to lean on human entered data.  
+  
+humans always make mistakes which are very hard to predict or deal with.  
+  
+the best way to take useful information from them is to restrict them to choose from ready-made data,
+otherwise they will use their imagination to enter some illogical data.
