@@ -19,5 +19,6 @@ the code folder contains the python scripts used in the report, they are used as
 ----------------
 the 'data' folder contains subfolders and with empty files .  
 actually it's a simulation of the project data directory tree that you should create or the config.py file will create it for you .
+  
 ------------------------------
 
