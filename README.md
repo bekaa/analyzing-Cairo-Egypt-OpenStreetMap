@@ -1,7 +1,7 @@
 # openstreetmap-udcity-s-Nanodegree-project
 analyzing  cairo,Egypt 's osm file from openstreetmap.org.  
   
-download the file from the link [cairo](https://mapzen.com/data/metro-extracts/metro/cairo_egypt/)  
+download the map osm file from the link [cairo](https://mapzen.com/data/metro-extracts/metro/cairo_egypt/)  
   
 ### read the report : cairo-egypt-osm-caseStudy.md
 
