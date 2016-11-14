@@ -15,5 +15,8 @@ the code folder contains the python scripts used in the report, they are used as
   * csv_to_sql and schema.sql : create a database tables using the schema, then add the data from the csv files into these tables.
 ---------
 #### in most of these scripts you will need to change the filename and the path to the input and output.
+----------------
+the 'data' folder contains subfolders and with empty files .  
+actually it's a simulation of the project data directory tree that you should create or the config.py file will create it for you .
+------------------------------
 
-  
