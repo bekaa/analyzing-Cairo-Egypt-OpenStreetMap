@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #convert xml map file  into csv type.
-# read xml_to_csv_DOCUMENTATION.txt to know what's this script for ..
+
 
 import csv
 import codecs
