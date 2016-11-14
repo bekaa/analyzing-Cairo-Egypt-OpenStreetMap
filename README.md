@@ -2,7 +2,9 @@
 analyzing  cairo,Egypt 's osm file from openstreetmap.org.  
   
 download the map osm file from the link [cairo](https://mapzen.com/data/metro-extracts/metro/cairo_egypt/)  
-  
+
+### a sample of the map could be found in /data/cairo/MAPS/cairo_sample.osm  in the project tree.
+
 ### read the report : cairo-egypt-osm-caseStudy.md
 
 the code folder contains the python scripts used in the report, they are used as follow :
