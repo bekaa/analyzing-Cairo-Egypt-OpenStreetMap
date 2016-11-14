@@ -20,23 +20,27 @@ And 3 children tags [ [tag](https://wiki.openstreetmap.org/wiki/Tags) - member(p
 * what I'm concerned about in the cleaning proces is child tag "tag" which is in the form [key:value].  
 * there are 239 different keys in the data .  
 * 17 of them starts with "addr:..." and they are listed below :
-  * addr:street
-  * addr:housenumber
-  * addr:city
-  * addr:country
-  * addr:postcode
-  * addr:housename
-  * addr:interpolation
-  * addr:place
-  * addr:street
-  * addr:city_1
-  * addr:suburb
-  * addr:unit
-  * addr:street
-  * addr:province
-  * addr:full
-  * addr:city
-  * addr:street:name
+
+|key|
+-------
+|addr:street|
+|addr:housenumber|
+|addr:city|
+|addr:country|
+|addr:postcode|
+|addr:housename|
+|addr:interpolation|
+|addr:place|
+|addr:street|
+|addr:city_1|
+|addr:suburb|
+|addr:unit|
+|addr:street|
+|addr:province|
+|addr:full|
+|addr:city|
+|addr:street:name|
+------------------
  * address data should be clean for future analysis, so I'll look at each of them and clean the dirty ones.  
  * I wrote a python script to print out all the values for each key in distinct file. the script named "explore_key_and_values.py" in the repo.  
  * After look in each file of them I noticed some unexpected data in some files :
