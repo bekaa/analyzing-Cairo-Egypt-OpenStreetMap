@@ -88,5 +88,12 @@ And 3 children tags [ [tag](https://wiki.openstreetmap.org/wiki/Tags) - member(p
 * to convert the csv files into a SQLite database using the schema "schema.sql" and python script "csv_to_sql"
 	
 -----
-
- <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1jjvbSRT1NAvvqnkjTAPzKIAgiJsss4I3wqOAegCLYXM/pubchart?oid=379890330&amp;format=interactive"></iframe>
+#### edits over time :
+edits to the map are made from 2008 to 2016 .  
+here are 3 graphs for [ nodes, ways, relations ] creation.  
+and we can see that the highest number of nodes and ways created on 07-2016 and the highest number of relations are created in 04-2013.  
+-----
+![Relations](https://docs.google.com/spreadsheets/d/1jjvbSRT1NAvvqnkjTAPzKIAgiJsss4I3wqOAegCLYXM/pubchart?oid=379890330&format=image)
+![ways](https://docs.google.com/spreadsheets/d/1jjvbSRT1NAvvqnkjTAPzKIAgiJsss4I3wqOAegCLYXM/pubchart?oid=275453333&format=image)
+![nodes](https://docs.google.com/spreadsheets/d/1jjvbSRT1NAvvqnkjTAPzKIAgiJsss4I3wqOAegCLYXM/pubchart?oid=1869514109&format=image) 
+----
