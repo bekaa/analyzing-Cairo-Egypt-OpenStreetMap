@@ -5,7 +5,7 @@ download the map osm file from the link [cairo](https://mapzen.com/data/metro-ex
 
 ### a sample of the map could be found in /data/cairo/MAPS/cairo_sample.osm  in the project tree.
 
-### read the report : cairo-egypt-osm-caseStudy.md
+### read the report : cairo-egypt-osm-report.md ( also an html version is available cairo-egypt-osm-report.html )
 
 the code folder contains the python scripts used in the report, they are used as follow :
   * config.py : contains variables to the path of used directories in the project, you need to change it before using any of the other scripts.
