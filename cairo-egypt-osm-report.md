@@ -257,7 +257,7 @@ GROUP BY nodes_tags.value
 |دومينوز يتزا|
 |هاردييز|
 ----------------------------
-# Addional ideas :
+# Additional ideas :
   
 ### problem :
 most of the messy data (in my opinion) are caused by misanderstanding of the fields, typo, writing in different language, or writing in different syntax ( like street names with different typing but still the same street)  
