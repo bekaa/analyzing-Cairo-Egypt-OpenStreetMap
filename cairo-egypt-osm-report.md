@@ -1,5 +1,5 @@
 
-# Case study of Cairo/Egypt [OpenStreetMap](http://www.openstreetmap.org/relation/5466227) xml file.  
+# analyzing Cairo/Egypt [OpenStreetMap](http://www.openstreetmap.org/relation/5466227) xml file.  
 
 Cairo is the capital of Egypt (my country).  
   
