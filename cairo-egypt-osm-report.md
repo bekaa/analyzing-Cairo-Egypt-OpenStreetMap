@@ -258,13 +258,28 @@ GROUP BY nodes_tags.value
 |هاردييز|
 ----------------------------
 # Addional ideas :
-most of the messy data (in my opinion) are caused by misanderstanding of the field, typo, writing in different language, or writing in different syntax ( like street names with different typing but still the same street)  
   
+### problem :
+most of the messy data (in my opinion) are caused by misanderstanding of the fields, typo, writing in different language, or writing in different syntax ( like street names with different typing but still the same street)  
+****
+### solution :
 I think the site could make some regex verfications for fields like postcode, housenumber and other fields that could be represented by a regular experession. 
   
 And for the fields like city,country,streetnames I think that the site should get a list of them from other governmental source, and let the user choose his city,country,streetname from a drop-down list, this way there will be no miss-typing or any other strange data.
   
 Also some fields should be united to some one language , just like some fields are meant only for english , and others from a local language, this way we won't have some fields with mixing languages which leads to  some problems.
+*******
+### implementation ideas/challenges regarding the solution :
+
+Regarding the regex verfications, for example, for some city or country in the world the house number are counted from 00000 to 99999 , or two digit followed by two number so implementing the regex would be easy, but also you will have to make a regex for every country and maybe for some cities alone, which would be exhaustive also it would be some challenging to get range of housenumbers/postcodes for every city/country, It will require some huge search .
+  
+and For the  city and country it's easy to get lists for them from wikipedia/google-map or any other resource.
+But the challenging is to get a list for each street-name, it's hard to get all the streets in some city without missing one, but also It can be handled, you can let the user choose from the street-names you got, and if didn't find his street, he could ask to add his streetname to the list.
+
+******************
+
+### another solution :
+Another solution came to my mind, instead of searching for the streets/cities names, the website will start with empty list, then the first user will add his streetname/city , then second user will only add a new city/street name only if he didn't find his city/street on the list.
 
 ---------------------------------------------
 # Finally :
