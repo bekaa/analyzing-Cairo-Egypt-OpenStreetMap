@@ -1,4 +1,4 @@
-# openstreetmap-udcity-s-Nanodegree-project
+# Analyzing Cairo/Egypt OpenStreetMap
 analyzing  cairo,Egypt 's osm file from openstreetmap.org.  
   
 download the map osm file from the link [cairo](https://mapzen.com/data/metro-extracts/metro/cairo_egypt/)  
@@ -24,4 +24,3 @@ the 'data' folder contains subfolders and with empty files .
 actually it's a simulation of the project data directory tree that you should create or the config.py script will create it for you .
   
 ------------------------------
-
